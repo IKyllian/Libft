@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 15:39:00 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/24 18:56:56 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 09:31:52 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		check_start_str(char const *s1, char const *set)
 		}
 	}
 	if (i == ft_strlen(s1))
-		return (0);
+		return (-1);
 	else
 		return (i);
 }
@@ -65,7 +65,7 @@ int		check_end_str(char const *s1, char const *set)
 		}
 	}
 	if (i < 0)
-		return (0);
+		return (-1);
 	else
 		return (i);
 }
@@ -82,7 +82,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	y = 0;
 	if (!(str = (char *)malloc(sizeof(*str) * (max_len - i + 2))))
 		return (NULL);
-	while (s1[i] && i <= max_len && (i != 0 || max_len != 0))
+	while (s1[i] && i <= max_len && (i != -1 && max_len != -1))
 		str[y++] = s1[i++];
 	str[y] = '\0';
 	return (str);
