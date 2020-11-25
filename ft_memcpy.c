@@ -6,22 +6,22 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:16:18 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/24 16:20:03 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 18:50:28 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *destination, const void *source, size_t size)
+void	*ft_memcpy(void *dst, const void *src, size_t size)
 {
 	char *dest;
-	char *src;
+	char *source;
 
-	dest = (char *)destination;
-	src = (char *)source;
-	if (!src && !dest)
+	dest = (char *)dst;
+	source = (char *)src;
+	if (!source && !dest)
 		return (NULL);
 	while (size--)
-		*dest++ = *src++;
-	return (destination);
+		*dest++ = *source++;
+	return (dst);
 }

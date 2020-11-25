@@ -6,22 +6,20 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 15:39:00 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/25 09:31:52 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 18:46:12 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		check_start_str(char const *s1, char const *set)
+static int		check_start_str(char const *s1, char const *set)
 {
 	size_t	i;
 	int		x;
-	int		is_sep;
 
 	i = 0;
 	x = 0;
-	is_sep = 1;
-	while (set[x] && is_sep)
+	while (set[x])
 	{
 		if (set[x] == s1[i])
 		{
@@ -29,11 +27,7 @@ int		check_start_str(char const *s1, char const *set)
 			i++;
 		}
 		else
-		{
 			x++;
-			if (!set[x])
-				is_sep = 0;
-		}
 	}
 	if (i == ft_strlen(s1))
 		return (-1);
@@ -41,16 +35,14 @@ int		check_start_str(char const *s1, char const *set)
 		return (i);
 }
 
-int		check_end_str(char const *s1, char const *set)
+static int		check_end_str(char const *s1, char const *set)
 {
 	int		i;
 	int		x;
-	int		is_sep;
 
 	i = ft_strlen(s1) - 1;
 	x = 0;
-	is_sep = 1;
-	while (set[x] && is_sep)
+	while (set[x])
 	{
 		if (set[x] == s1[i])
 		{
@@ -58,11 +50,7 @@ int		check_end_str(char const *s1, char const *set)
 			i--;
 		}
 		else
-		{
 			x++;
-			if (!set[x])
-				is_sep = 0;
-		}
 	}
 	if (i < 0)
 		return (-1);
@@ -70,7 +58,7 @@ int		check_end_str(char const *s1, char const *set)
 		return (i);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		y;

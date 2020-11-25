@@ -6,13 +6,13 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 12:38:48 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/24 12:49:29 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 18:45:48 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		nbr_length(long nbr)
+static int		nbr_length(long nbr)
 {
 	int length;
 
@@ -30,7 +30,7 @@ int		nbr_length(long nbr)
 	return (++length);
 }
 
-void	check_negative(char *str, int *index, long *nbr)
+static void		check_negative(char *str, int *index, long *nbr)
 {
 	if (*nbr < 0)
 	{
@@ -39,7 +39,7 @@ void	check_negative(char *str, int *index, long *nbr)
 	}
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	int		tab[50];
 	char	*str;

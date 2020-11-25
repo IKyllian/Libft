@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 13:10:44 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/25 18:54:39 by kdelport         ###   ########lyon.fr   */
+/*   Created: 2020/11/25 17:04:36 by kdelport          #+#    #+#             */
+/*   Updated: 2020/11/25 18:36:52 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned char	*p1;
-	unsigned char	*p2;
-	int				i;
+	t_list	*list;
+	t_list	*cpy_list;
 
-	i = 0;
-	p1 = (unsigned char *)s1;
-	p2 = (unsigned char *)s2;
-	if (n == 0)
-		return (0);
-	while ((*p1 == *p2) && --n)
+	if (!lst)
+		return (NULL);
+	if (!(list = ft_lstnew((*f)(lst->content))))
+		return (NULL);
+	cpy_list = list;
+	while (lst->next)
 	{
-		p1++;
-		p2++;
+		lst = lst->next;
+		if (lst)
+		{
+			if (!(cpy_list->next = ft_lstnew((*f)(lst->content))))
+			{
+				ft_lstclear(&list, del);
+				return (NULL);
+			}
+			cpy_list = cpy_list->next;
+		}
 	}
-	if (*p1 != *p2)
-		return (*p1 - *p2);
-	return (0);
+	return (list);
 }

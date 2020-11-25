@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 13:10:44 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/25 18:54:39 by kdelport         ###   ########lyon.fr   */
+/*   Created: 2020/11/25 12:53:59 by kdelport          #+#    #+#             */
+/*   Updated: 2020/11/25 15:50:02 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	unsigned char	*p1;
-	unsigned char	*p2;
-	int				i;
+	t_list *list;
 
-	i = 0;
-	p1 = (unsigned char *)s1;
-	p2 = (unsigned char *)s2;
-	if (n == 0)
-		return (0);
-	while ((*p1 == *p2) && --n)
+	list = *alst;
+	if (!list)
 	{
-		p1++;
-		p2++;
+		*alst = new;
+		return ;
 	}
-	if (*p1 != *p2)
-		return (*p1 - *p2);
-	return (0);
+	while (list->next)
+		list = list->next;
+	list->next = new;
 }

@@ -6,24 +6,24 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 11:35:28 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/24 16:06:05 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 18:58:03 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 
-void	*ft_memccpy(void *destination, const void *source, int ch, size_t size)
+void	*ft_memccpy(void *dst, const void *src, int ch, size_t n)
 {
 	unsigned char *dest;
-	unsigned char *src;
+	unsigned char *source;
 
-	dest = (unsigned char *)destination;
-	src = (unsigned char *)source;
-	while (size--)
+	dest = (unsigned char *)dst;
+	source = (unsigned char *)src;
+	while (n--)
 	{
-		*dest++ = *src;
-		if (*src++ == (unsigned char)ch)
+		*dest++ = *source;
+		if (*source++ == (unsigned char)ch)
 			return ((void *)dest);
 	}
 	return (NULL);

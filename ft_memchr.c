@@ -6,20 +6,20 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:07:40 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/24 10:53:15 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 18:55:49 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *memory_block, int searched_char, size_t size)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	char *str;
 
-	str = (char *)memory_block;
-	while (size--)
+	str = (char *)s;
+	while (n--)
 	{
-		if (*str == searched_char)
+		if (*str == c)
 			return (str);
 		str++;
 	}

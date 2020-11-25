@@ -6,13 +6,13 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:01:04 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/24 11:36:01 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 18:58:50 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		is_sep(char str, char sep)
+static int		is_sep(char str, char sep)
 {
 	if (!str)
 		return (0);
@@ -21,16 +21,16 @@ int		is_sep(char str, char sep)
 	return (0);
 }
 
-int		*get_strings_len(char const *str, char sep, int **starts, int size)
+static int		*get_strings_len(char const *str, char sep, int **starts, int l)
 {
 	int i;
 	int x;
 	int *strings_len;
 
 	i = 0;
-	if (!(strings_len = (int *)malloc(sizeof(*strings_len) * size)))
+	if (!(strings_len = (int *)malloc(sizeof(*strings_len) * l)))
 		return (NULL);
-	if (!(*starts = (int *)malloc(sizeof(**starts) * size)))
+	if (!(*starts = (int *)malloc(sizeof(**starts) * l)))
 		return (NULL);
 	x = is_sep(str[0], sep);
 	while (str[i])
@@ -50,7 +50,7 @@ int		*get_strings_len(char const *str, char sep, int **starts, int size)
 	return (strings_len);
 }
 
-void	ft_fill_tab(char const *str, char **output, int *starts, int *s_len)
+static void		fill_tab(char const *str, char **output, int *starts, int *len)
 {
 	int i;
 	int x;
@@ -61,13 +61,13 @@ void	ft_fill_tab(char const *str, char **output, int *starts, int *s_len)
 	{
 		if (i == *starts)
 		{
-			if (!(output[x] = malloc(sizeof(**output) * (*s_len + 1))))
+			if (!(output[x] = malloc(sizeof(**output) * (*len + 1))))
 				return ;
-			while (i++ - *starts < *s_len)
+			while (i++ - *starts < *len)
 				output[x][i - *starts - 1] = str[i - 1];
 			output[x][i - *starts - 1] = '\0';
 			starts++;
-			s_len++;
+			len++;
 			x++;
 		}
 		else
@@ -76,7 +76,7 @@ void	ft_fill_tab(char const *str, char **output, int *starts, int *s_len)
 	output[x] = 0;
 }
 
-int		ft_get_tab_len(char const *str, char sep)
+static int		ft_get_tab_len(char const *str, char sep)
 {
 	int i;
 	int x;
@@ -94,7 +94,7 @@ int		ft_get_tab_len(char const *str, char sep)
 	return (x);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	int		len;
 	int		*starts;
@@ -106,7 +106,7 @@ char	**ft_split(char const *s, char c)
 	if (!(output = malloc(sizeof(*output) * (len + 1))))
 		return (NULL);
 	if (len)
-		ft_fill_tab(s, output, starts, strings_len);
+		fill_tab(s, output, starts, strings_len);
 	else
 		output[0] = 0;
 	return (output);
