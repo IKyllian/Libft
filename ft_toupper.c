@@ -6,11 +6,14 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:39:58 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/24 11:02:30 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 10:20:22 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_toupper(int c)
 {
-	return (!(c >= 97 && c <= 122) ? c : c - 32);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	else
+		return (c);
 }

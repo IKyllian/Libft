@@ -6,11 +6,14 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:39:14 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/24 11:02:22 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 10:19:42 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_tolower(int c)
 {
-	return (!(c >= 65 && c <= 90) ? c : c + 32);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	else
+		return (c);
 }
