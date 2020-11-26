@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 15:39:00 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/25 18:46:12 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 11:48:29 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	int		max_len;
 	char	*str;
 
+	if (!s1)
+		return (NULL);
 	i = check_start_str(s1, set);
 	max_len = check_end_str(s1, set);
 	y = 0;

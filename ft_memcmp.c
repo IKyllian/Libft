@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:10:44 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/25 18:54:39 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 11:16:48 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,9 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	p2 = (unsigned char *)s2;
 	if (n == 0)
 		return (0);
-	while ((*p1 == *p2) && --n)
-	{
-		p1++;
-		p2++;
-	}
-	if (*p1 != *p2)
-		return (*p1 - *p2);
+	while ((p1[i] == p2[i]) && --n)
+		i++;
+	if (p1[i] != p2[i])
+		return (p1[i] - p2[i]);
 	return (0);
 }

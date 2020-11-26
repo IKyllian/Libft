@@ -6,12 +6,11 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 11:35:28 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/25 18:58:03 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 11:56:49 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 void	*ft_memccpy(void *dst, const void *src, int ch, size_t n)
 {

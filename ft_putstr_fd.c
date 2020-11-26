@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 09:43:08 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/24 09:52:26 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 10:58:12 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
-
-	i = 0;
-	while (s[i])
-		ft_putchar_fd(s[i++], fd);
+	if (!s)
+		return ;
+	write(fd, s, ft_strlen(s));
 }

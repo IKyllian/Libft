@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:01:04 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/25 18:58:50 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 11:46:19 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,8 @@ char			**ft_split(char const *s, char c)
 	int		*strings_len;
 	char	**output;
 
+	if (!s)
+		return (NULL);
 	len = ft_get_tab_len(s, c);
 	strings_len = get_strings_len(s, c, &starts, len);
 	if (!(output = malloc(sizeof(*output) * (len + 1))))

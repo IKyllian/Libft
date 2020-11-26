@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 17:04:36 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/25 18:36:52 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 09:21:29 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*list;
-	t_list	*cpy_list;
+	t_list	*elmt;
 
 	if (!lst)
 		return (NULL);
-	if (!(list = ft_lstnew((*f)(lst->content))))
+	if (!(elmt = ft_lstnew((*f)(lst->content))))
+	{
+		ft_lstclear(&list, del);
 		return (NULL);
-	cpy_list = list;
+	}
+	list = elmt;
 	while (lst->next)
 	{
 		lst = lst->next;
-		if (lst)
+		if (!(elmt = ft_lstnew((*f)(lst->content))))
 		{
-			if (!(cpy_list->next = ft_lstnew((*f)(lst->content))))
-			{
-				ft_lstclear(&list, del);
-				return (NULL);
-			}
-			cpy_list = cpy_list->next;
+			ft_lstclear(&list, del);
+			return (NULL);
 		}
+		ft_lstadd_back(&list, elmt);
 	}
 	return (list);
 }

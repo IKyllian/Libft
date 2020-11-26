@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 11:35:14 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/25 09:23:24 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 10:12:39 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	*ft_calloc(size_t element_count, size_t element_size)
 {
-	char	*mem;
+	void	*mem;
 
 	if (!(mem = malloc(element_size * element_count)))
 		return (NULL);
 	ft_memset(mem, 0, element_count * element_size);
-	return ((void *)mem);
+	return (mem);
 }

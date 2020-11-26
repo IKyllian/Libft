@@ -17,7 +17,7 @@ RM = rm -f
 all : $(NAME)
 
 %.o : %.c
-	$(CC) $(FLAGS) -I includes -c $< -o $(<:.c=.o)
+	$(CC) $(FLAGS) -I libft.h -c $< -o $(<:.c=.o)
 
 $(NAME) : $(OBJS)
 	ar cr $(NAME) $(OBJS)
@@ -33,4 +33,4 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : clean fclean re all
+.PHONY : clean fclean re all bonus
