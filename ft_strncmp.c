@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:36:41 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/24 11:06:06 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/27 16:24:09 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	if (n == 0)
 		return (0);
-	while ((s1[i] || s2[i]) && s1[i] == s2[i] && (i < n - 1))
+	while ((s1[i] && s2[i]) && s1[i] == s2[i] && (i < n - 1))
 		i++;
 	if (s1[i] == s2[i])
 		return (0);
