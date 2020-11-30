@@ -17,7 +17,7 @@ RM = rm -f
 all : $(NAME)
 
 %.o : %.c
-	$(CC) $(FLAGS) -I libft.h -c $< -o $(<:.c=.o)
+	$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
 
 $(NAME) : $(OBJS)
 	ar cr $(NAME) $(OBJS)

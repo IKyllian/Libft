@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:37:44 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/24 11:06:38 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/30 01:27:26 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,12 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 		if (s1[i] == s2[x])
 		{
 			str = (char *)&s1[i];
-			while (s1[i] == s2[x++] && i++ < len)
-				if (s2[x] == '\0')
+			while (s1[i + x] == s2[x] && i + x < len)
+				if (s2[++x] == '\0')
 					return (str);
 			x = 0;
 		}
-		else
-			i++;
+		i++;
 	}
 	return (NULL);
 }
