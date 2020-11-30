@@ -6,13 +6,13 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:16:11 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/30 01:50:09 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/11/30 02:11:16 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		get_min(char const *s, size_t len)
+static int		get_min(char const *s, size_t len)
 {
 	if (ft_strlen(s) < len)
 		return (ft_strlen(s));
@@ -20,7 +20,7 @@ int		get_min(char const *s, size_t len)
 		return (len);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char			*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	size_t	x;
