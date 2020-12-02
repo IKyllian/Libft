@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:35:42 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/23 13:39:45 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 23:51:04 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t		ft_strlen(const char *s)
 {
 	size_t i;
 
+	if (!s)
+		return (0);
 	i = 0;
 	while (s[i])
 		i++;
