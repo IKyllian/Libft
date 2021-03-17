@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:31:07 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/23 13:31:43 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 10:50:09 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ char	*ft_strdup(const char *source)
 	int		i;
 	char	*str;
 
-	if (!(str = (char *)malloc(sizeof(*str) * (ft_strlen(source) + 1))))
+	str = (char *)malloc(sizeof(*str) * (ft_strlen(source) + 1));
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (source[i])

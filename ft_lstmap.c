@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 17:04:36 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/27 16:21:40 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 10:44:30 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst)
 		return (NULL);
-	if (!(elmt = ft_lstnew((*f)(lst->content))))
+	elmt = ft_lstnew((*f)(lst->content));
+	if (!elmt)
 	{
 		ft_lstclear(&list, del);
 		return (NULL);
@@ -28,7 +29,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst->next)
 	{
 		lst = lst->next;
-		if (!(elmt = ft_lstnew((*f)(lst->content))))
+		elmt = ft_lstnew((*f)(lst->content));
+		if (!elmt)
 		{
 			ft_lstclear(&list, del);
 			return (NULL);

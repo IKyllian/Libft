@@ -6,11 +6,11 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 12:52:46 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/24 10:52:36 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 10:39:57 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

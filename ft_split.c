@@ -6,13 +6,13 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:01:04 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/27 12:21:24 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 10:59:02 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		*free_tab(char **str, int length)
+static	void	*free_tab(char **str, int length)
 {
 	while (length--)
 		free(*str++);
@@ -20,9 +20,9 @@ static void		*free_tab(char **str, int length)
 	return (NULL);
 }
 
-static int		get_strings_len(char const *str, char sep)
+static	int	get_strings_len(char const *str, char sep)
 {
-	int compt;
+	int	compt;
 
 	compt = 0;
 	while (*str)
@@ -35,10 +35,10 @@ static int		get_strings_len(char const *str, char sep)
 	return (compt);
 }
 
-static int		get_tab_len(char const *str, char sep)
+static	int	get_tab_len(char const *str, char sep)
 {
-	int i;
-	int x;
+	int	i;
+	int	x;
 
 	i = 0;
 	x = 0;
@@ -55,18 +55,19 @@ static int		get_tab_len(char const *str, char sep)
 	return (x);
 }
 
-static char		**fill_tab(char const *str, char **output, char sep)
+static	char	**fill_tab(char const *str, char **output, char sep)
 {
-	int i;
-	int x;
+	int	i;
+	int	x;
 
 	x = 0;
 	while (*str)
 	{
 		if (*str != sep)
 		{
-			if (!(output[x] = malloc(sizeof(**output) *
-				(get_strings_len(str, sep) + 1))))
+			output[x] = malloc(sizeof(**output) * \
+				(get_strings_len(str, sep) + 1));
+			if (!output[x])
 				return (free_tab(output, x));
 			i = 0;
 			while (*str != sep && *str)
@@ -80,7 +81,7 @@ static char		**fill_tab(char const *str, char **output, char sep)
 	return (output);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		length;
 	char	**output;
@@ -88,7 +89,8 @@ char			**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	length = get_tab_len(s, c);
-	if (!(output = malloc(sizeof(*output) * (length + 1))))
+	output = malloc(sizeof(*output) * (length + 1));
+	if (!output)
 		return (NULL);
 	if (length)
 		return (fill_tab(s, output, c));

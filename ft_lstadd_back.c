@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 12:53:59 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/26 16:53:50 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 10:41:42 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_list *list;
+	t_list	*list;
 
 	list = *alst;
 	if (!list)

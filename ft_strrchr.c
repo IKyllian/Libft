@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:38:51 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/24 12:22:37 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 10:52:47 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
+	int	i;
 
 	i = ft_strlen(s);
 	while (i >= 0)

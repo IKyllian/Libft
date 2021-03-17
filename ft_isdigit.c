@@ -6,11 +6,11 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 12:52:09 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/24 10:52:19 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 10:39:47 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if ((c >= 48 && c <= 57))
 		return (1);

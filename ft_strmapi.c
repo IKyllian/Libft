@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 09:10:51 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/26 11:45:32 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 10:52:00 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	if (!s)
 		return (NULL);
-	if (!(str = (char *)malloc(sizeof(*str) * (ft_strlen(s) + 1))))
+	str = (char *)malloc(sizeof(*str) * (ft_strlen(s) + 1));
+	if (!str)
 		return (NULL);
 	while (s[i])
 	{

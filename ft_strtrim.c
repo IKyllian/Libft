@@ -6,13 +6,13 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 15:39:00 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/27 11:01:44 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 10:54:00 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		check_start_str(char const *s1, char const *set)
+static	int	check_start_str(char const *s1, char const *set)
 {
 	size_t	i;
 	int		x;
@@ -35,10 +35,10 @@ static int		check_start_str(char const *s1, char const *set)
 		return (i);
 }
 
-static int		check_end_str(char const *s1, char const *set)
+static	int	check_end_str(char const *s1, char const *set)
 {
-	int		i;
-	int		x;
+	int	i;
+	int	x;
 
 	i = ft_strlen(s1) - 1;
 	x = 0;
@@ -58,7 +58,7 @@ static int		check_end_str(char const *s1, char const *set)
 		return (i);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		y;
@@ -70,7 +70,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	i = check_start_str(s1, set);
 	max_len = check_end_str(s1, set);
 	y = 0;
-	if (!(str = (char *)malloc(sizeof(*str) * (max_len - i + 2))))
+	str = (char *)malloc(sizeof(*str) * (max_len - i + 2));
+	if (!str)
 		return (NULL);
 	while (s1[i] && i <= max_len && (i != -1 && max_len != -1))
 		str[y++] = s1[i++];

@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 11:35:28 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/26 11:56:49 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 10:46:38 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memccpy(void *dst, const void *src, int ch, size_t n)
 {
-	unsigned char *dest;
-	unsigned char *source;
+	unsigned char	*dest;
+	unsigned char	*source;
 
 	dest = (unsigned char *)dst;
 	source = (unsigned char *)src;

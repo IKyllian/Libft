@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 11:40:51 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/25 11:59:19 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 10:45:05 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *elem;
+	t_list	*elem;
 
-	if (!(elem = (t_list *)malloc(sizeof(*elem))))
+	elem = (t_list *)malloc(sizeof(*elem));
+	if (!elem)
 		return (NULL);
 	elem->content = content;
 	elem->next = NULL;

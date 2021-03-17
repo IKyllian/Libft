@@ -6,16 +6,16 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:35:19 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/26 11:44:48 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 10:51:17 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned int i;
-	unsigned int count;
+	unsigned int	i;
+	unsigned int	count;
 
 	i = 0;
 	count = 0;

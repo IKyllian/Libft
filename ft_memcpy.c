@@ -6,7 +6,7 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:16:18 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/25 18:50:28 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 10:47:29 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t size)
 {
-	char *dest;
-	char *source;
+	char	*dest;
+	char	*source;
 
 	dest = (char *)dst;
 	source = (char *)src;

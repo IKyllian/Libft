@@ -6,15 +6,15 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:35:42 by kdelport          #+#    #+#             */
-/*   Updated: 2020/12/01 23:51:04 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 10:51:30 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	if (!s)
 		return (0);

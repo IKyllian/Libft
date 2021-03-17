@@ -6,11 +6,11 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 12:41:04 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/23 13:49:53 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 10:37:30 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int		i;
 	long	nbr;

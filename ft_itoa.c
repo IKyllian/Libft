@@ -6,15 +6,15 @@
 /*   By: kdelport <kdelport@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 12:38:48 by kdelport          #+#    #+#             */
-/*   Updated: 2020/11/25 18:45:48 by kdelport         ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 10:40:56 by kdelport         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		nbr_length(long nbr)
+static	int	nbr_length(long nbr)
 {
-	int length;
+	int	length;
 
 	length = 0;
 	if (nbr < 0)
@@ -30,7 +30,7 @@ static int		nbr_length(long nbr)
 	return (++length);
 }
 
-static void		check_negative(char *str, int *index, long *nbr)
+static	void	check_negative(char *str, int *index, long *nbr)
 {
 	if (*nbr < 0)
 	{
@@ -39,7 +39,7 @@ static void		check_negative(char *str, int *index, long *nbr)
 	}
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int		tab[50];
 	char	*str;
@@ -50,7 +50,8 @@ char			*ft_itoa(int n)
 	i = 0;
 	x = 0;
 	nbr = n;
-	if (!(str = (char *)malloc(sizeof(*str) * (nbr_length(n) + 1))))
+	str = (char *)malloc(sizeof(*str) * (nbr_length(n) + 1));
+	if (!str)
 		return (NULL);
 	if (nbr == 0)
 		str[x++] = '0';
